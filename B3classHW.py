@@ -78,23 +78,25 @@ class HTML:
                     FILE.write(item+"\n")
             FILE.close()
 
-HTMLlist=[]
-#возможно эту переменную можно было поместить в класс
-fr = Tag()
-fr.tag_form("H1", klass={"class":"main-text"})
-fr.tag_form("p", text="another test")
-fr.tag_form("img", klass={"src":"/icon.png", "data-image":"responsive"})
-fr.tag_form("div", klass={"class":"container container-fluid", "id":"lead"})
+            
+if __name__ == "__main__":            
+    HTMLlist=[]
+    #возможно эту переменную можно было поместить в класс
+    fr = Tag()
+    fr.tag_form("H1", klass={"class":"main-text"})
+    fr.tag_form("p", text="another test")
+    fr.tag_form("img", klass={"src":"/icon.png", "data-image":"responsive"})
+    fr.tag_form("div", klass={"class":"container container-fluid", "id":"lead"})
 
-mainTag = TopLevelTag()
-mainTag.TopLevel('body')
-mainTag.TopLevel('head', 'Hello')
-mainTag.TopLevel('html')
-my_save = HTML()
-my_save.HTMLsave(HTMLlist)
-# если необходимо сохранить в файл сделать такую запись my_save.HTMLsave(HTMLlist, True)
+    mainTag = TopLevelTag()
+    mainTag.TopLevel('body')
+    mainTag.TopLevel('head', 'Hello')
+    mainTag.TopLevel('html')
+    my_save = HTML()
+    my_save.HTMLsave(HTMLlist)
+    # если необходимо сохранить в файл сделать такую запись my_save.HTMLsave(HTMLlist, True)
 
-#print (fr.tag)
-#print ("проверка класса ТОп левел: ", mainTag.tag)
-#print ("проверка класса HTML save: ", my_save.write_in_file)
-#print (HTMLlist)
+    #print (fr.tag)
+    #print ("проверка класса ТОп левел: ", mainTag.tag)
+    #print ("проверка класса HTML save: ", my_save.write_in_file)
+    #print (HTMLlist)
